@@ -3,8 +3,67 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Dra. Carolina Juárez | Médica Internista</title>
+  <title>Dra. Carolina Juárez | Médica Internista en Mérida y videoconsulta en México</title>
+  <meta name="description" content="Médica internista. Atención a personas adultas: diagnóstico y estudio de síntomas, salud metabólica y GLP-1, consulta neuroafirmativa para adultos con neurodivergencia de diagnóstico tardío, y espacio seguro para mujeres. Videoconsulta en toda la república y consulta presencial en Mérida, Yucatán.">
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Outfit:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+  <!-- DATOS ESTRUCTURADOS PARA BUSCADORES Y MOTORES DE IA -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Physician",
+    "name": "Dra. Carolina Juárez Zúñiga",
+    "alternateName": "Dra. Carolina Juárez",
+    "url": "https://carojuarez.doctor",
+    "medicalSpecialty": "Internal Medicine",
+    "description": "Médica internista. Atiende a personas adultas: estudio de síntomas y diagnóstico, revisión y ordenamiento de diagnósticos previos incompletos, segundas opiniones, salud metabólica e inicio o seguimiento de GLP-1, y espacio seguro para mujeres y para personas que viven con sobrepeso u obesidad. Atención neuroafirmativa de la salud física en personas adultas neurodivergentes, con o sin diagnóstico formal (no realiza el diagnóstico de neurodivergencia, pero lo toma en cuenta en la evaluación de salud física). Videoconsulta en toda la república mexicana y consulta presencial en Mérida, Yucatán.",
+    "knowsAbout": [
+      "Medicina interna",
+      "Diagnóstico en personas adultas",
+      "Salud metabólica",
+      "Obesidad y sobrepeso",
+      "Tratamiento con GLP-1",
+      "Diabetes tipo 2 y prediabetes",
+      "Neurodivergencia en personas adultas",
+      "Abordaje de salud física en personas neurodivergentes",
+      "Atención neuroafirmativa",
+      "Salud hormonal y metabólica de la mujer",
+      "Valoración preoperatoria"
+    ],
+    "availableService": [
+      {
+        "@type": "MedicalProcedure",
+        "name": "Videoconsulta de medicina interna",
+        "description": "Consulta por videoconferencia para personas adultas en toda la república mexicana."
+      },
+      {
+        "@type": "MedicalProcedure",
+        "name": "Consulta presencial de medicina interna",
+        "description": "Consulta presencial en Mérida, Yucatán, con exploración física."
+      },
+      {
+        "@type": "MedicalProcedure",
+        "name": "Valoración preoperatoria",
+        "description": "Evaluación médica previa a cirugía. Únicamente presencial en Mérida."
+      }
+    ],
+    "areaServed": {
+      "@type": "Country",
+      "name": "México"
+    },
+    "address": {
+      "@type": "PostalAddress",
+      "addressLocality": "Mérida",
+      "addressRegion": "Yucatán",
+      "addressCountry": "MX"
+    },
+    "availableLanguage": "Spanish",
+    "sameAs": [
+      "https://instagram.com/dra.carolinajuarez"
+    ]
+  }
+  </script>
+
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
@@ -403,9 +462,94 @@
       line-height: 1.7;
     }
 
+    /* PARA QUIÉN / VIDEOCONSULTA */
+    .videoconsulta {
+      background: var(--white);
+    }
+
+    .vc-intro {
+      max-width: 640px;
+      margin-bottom: 3rem;
+    }
+
+    .vc-intro p {
+      font-size: 1.05rem;
+      font-weight: 300;
+      color: var(--text-mid);
+      line-height: 1.8;
+    }
+
+    .vc-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 1.5rem;
+    }
+
+    .vc-card {
+      border: 1.5px solid rgba(91,63,138,0.15);
+      border-radius: 20px;
+      padding: 2.2rem;
+      background: linear-gradient(135deg, rgba(212,197,240,0.08), rgba(184,238,221,0.08));
+    }
+
+    .vc-card-title {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.4rem;
+      font-weight: 400;
+      color: var(--text-dark);
+      margin-bottom: 1rem;
+    }
+
+    .vc-card ul {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 0.6rem;
+    }
+
+    .vc-card li {
+      font-size: 0.92rem;
+      font-weight: 300;
+      color: var(--text-mid);
+      line-height: 1.6;
+      padding-left: 1.2rem;
+      position: relative;
+    }
+
+    .vc-card li::before {
+      content: '';
+      position: absolute;
+      left: 0;
+      top: 0.55em;
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      background: var(--purple-light);
+    }
+
+    .vc-note {
+      margin-top: 2rem;
+      background: rgba(91,63,138,0.05);
+      border-left: 3px solid var(--purple-light);
+      border-radius: 8px;
+      padding: 1.2rem 1.5rem;
+      font-size: 0.95rem;
+      font-weight: 400;
+      color: var(--text-dark);
+      line-height: 1.6;
+    }
+
+    .vc-note span {
+      display: block;
+      font-size: 0.85rem;
+      font-weight: 300;
+      color: var(--text-mid);
+      margin-top: 0.3rem;
+    }
+
     /* PAQUETES */
     .paquetes {
-      background: var(--white);
+      background: linear-gradient(160deg, rgba(184,238,221,0.15) 0%, rgba(212,197,240,0.18) 100%);
     }
 
     .paquetes-intro {
@@ -433,6 +577,7 @@
       transition: all 0.3s;
       position: relative;
       overflow: hidden;
+      background: rgba(255,255,255,0.6);
     }
 
     .paquete-card::after {
@@ -777,6 +922,35 @@
       transform: translateY(-2px);
     }
 
+    /* AVISO URGENCIAS */
+    .aviso-urgencias {
+      background: var(--bg-off);
+      padding: 2.5rem 3rem;
+    }
+
+    .aviso-urgencias .container {
+      border: 1px solid rgba(91,63,138,0.15);
+      border-radius: 16px;
+      padding: 1.5rem 2rem;
+      background: rgba(255,255,255,0.6);
+      text-align: center;
+    }
+
+    .aviso-urgencias p {
+      font-size: 0.95rem;
+      font-weight: 400;
+      color: var(--text-dark);
+      line-height: 1.6;
+    }
+
+    .aviso-urgencias p span {
+      display: block;
+      font-size: 0.85rem;
+      font-weight: 300;
+      color: var(--text-mid);
+      margin-top: 0.3rem;
+    }
+
     /* FOOTER */
     footer {
       background: var(--text-dark);
@@ -805,6 +979,7 @@
       gap: 1.5rem;
       justify-content: center;
       margin-bottom: 1.5rem;
+      flex-wrap: wrap;
     }
 
     .footer-links a {
@@ -832,10 +1007,12 @@
       .internista-grid,
       .precios-grid,
       .paquetes-grid,
-      .poblaciones-grid { grid-template-columns: 1fr; gap: 2rem; }
+      .poblaciones-grid,
+      .vc-grid { grid-template-columns: 1fr; gap: 2rem; }
       .internista-visual { grid-template-columns: 1fr 1fr; }
       .int-block:nth-child(2),
       .int-block:nth-child(3) { margin-top: 0; }
+      .aviso-urgencias { padding: 2rem 1.5rem; }
       footer { padding: 2rem 1.5rem; }
     }
 
@@ -859,6 +1036,7 @@
     <div class="nav-logo">Dra. Carolina Juárez</div>
     <ul class="nav-links">
       <li><a href="#sobre-mi">Sobre mí</a></li>
+      <li><a href="#videoconsulta">Videoconsulta</a></li>
       <li><a href="#consultas">Consultas</a></li>
       <li><a href="#precios">Precios</a></li>
       <li><a href="https://dracarolinajuarez.setmore.com" class="nav-cta">Agendar</a></li>
@@ -869,9 +1047,9 @@
   <section class="hero">
     <div class="hero-bg"></div>
     <div class="hero-content">
-      <span class="hero-badge">Medicina Interna · Mérida, Yucatán · Videoconsulta</span>
+      <span class="hero-badge">Médica Internista · Mérida, Yucatán · Videoconsulta en México</span>
       <h1>Finalmente, una consulta donde puedes ser <em>todo lo que eres.</em></h1>
-      <p class="hero-sub">Atención integral con enfoque en mujeres, neurodivergencia y obesidad sin estigma.</p>
+      <p class="hero-sub">Medicina interna para personas adultas. Atención neuroafirmativa, salud metabólica y un espacio donde se te escucha con calma.</p>
       <div class="hero-btns">
         <a href="https://dracarolinajuarez.setmore.com" class="btn-primary">Agendar videoconsulta →</a>
         <a href="https://calendly.com/dracarojuarez/new-meeting" class="btn-outline">Agendar presencial</a>
@@ -900,18 +1078,18 @@
         <div class="sobre-mi-text">
           <span class="section-label">Quién soy</span>
           <h2 class="section-title">Dra. Carolina Juárez Zúñiga</h2>
-          <p>Soy internista. Me enfoco en tres poblaciones que con frecuencia comparten algo: han cargado con estigmas que interfirieron con recibir atención médica <strong>completa.</strong></p>
-          <p>Mujeres, personas neurodivergentes con diagnóstico tardío, y personas con obesidad. Tres grupos distintos, con una experiencia en común — la de no haber sido vistas del todo.</p>
-          <p>Mi consulta existe para eso: para ver a la persona completa, no solo el síntoma que trae ese día.</p>
+          <p>Soy <strong>médica internista</strong>. Atiendo a personas adultas: estudio tus síntomas, llego a un diagnóstico y, cuando ya traes diagnósticos previos, los reviso y los ordeno.</p>
+          <p>Mi consulta es <strong>neuroafirmativa</strong>. Atiendo la salud física de personas adultas neurodivergentes —con o sin diagnóstico formal—, partiendo de que el sistema nervioso funciona de maneras distintas y de que eso influye en el resto del cuerpo. No realizo el diagnóstico de neurodivergencia, pero sí lo tomo en cuenta al evaluar tu salud.</p>
+          <p>Soy un espacio seguro para <strong>mujeres</strong>, y un espacio seguro para quienes viven con sobrepeso u obesidad y quieren abordar su salud metabólica, incluido el uso de GLP-1.</p>
           <p>Cuento con experiencia en el sistema público, privado y en telemedicina.</p>
         </div>
         <div class="sobre-mi-visual">
-          <div class="tag-pill"><span class="tag-dot"></span> Medicina sin estigma de peso</div>
+          <div class="tag-pill"><span class="tag-dot"></span> Diagnóstico en personas adultas</div>
           <div class="tag-pill"><span class="tag-dot"></span> Enfoque neuroafirmativo</div>
-          <div class="tag-pill"><span class="tag-dot"></span> Diagnóstico tardío</div>
-          <div class="tag-pill"><span class="tag-dot"></span> Condiciones crónicas complejas</div>
-          <div class="tag-pill"><span class="tag-dot"></span> Salud hormonal y metabólica</div>
-          <div class="tag-pill"><span class="tag-dot"></span> Videoconsulta disponible</div>
+          <div class="tag-pill"><span class="tag-dot"></span> Salud física en personas neurodivergentes</div>
+          <div class="tag-pill"><span class="tag-dot"></span> Espacio seguro para mujeres</div>
+          <div class="tag-pill"><span class="tag-dot"></span> Salud metabólica y GLP-1</div>
+          <div class="tag-pill"><span class="tag-dot"></span> Videoconsulta en toda la república</div>
         </div>
       </div>
     </div>
@@ -925,19 +1103,54 @@
       <div class="poblaciones-grid">
         <div class="pop-card">
           <div class="pop-num">01</div>
-          <div class="pop-title">Si eres mujer</div>
-          <p class="pop-text">Tu cuerpo cambia a lo largo de la vida de formas que la medicina ha estudiado poco. Hormonas, ciclos, etapas. Una consulta que te toma en serio considera todo ese contexto — no lo minimiza.</p>
+          <div class="pop-title">Si eres una persona adulta con síntomas sin respuesta</div>
+          <p class="pop-text">Cuando los síntomas no encajan en una sola especialidad, la medicina interna existe para estudiarlos en conjunto, llegar a un diagnóstico y darte un plan claro.</p>
         </div>
         <div class="pop-card">
           <div class="pop-num">02</div>
           <div class="pop-title">Si eres neurodivergente</div>
-          <p class="pop-text">El TDAH, el autismo y otras variantes neurológicas se presentan diferente en cada persona, y muchas veces llegan tarde al diagnóstico. Eso tiene consecuencias reales en la salud física. Aquí ese contexto importa desde el inicio.</p>
+          <p class="pop-text">El TDAH, el autismo y otras formas de neurodivergencia se presentan distinto en cada persona. Aquí parto de que tu sistema nervioso funciona diferente y de que eso influye en tu salud física —tengas o no un diagnóstico formal—. No diagnostico la neurodivergencia, pero la considero al evaluar tu salud.</p>
         </div>
         <div class="pop-card">
           <div class="pop-num">03</div>
-          <div class="pop-title">Si vives con obesidad</div>
-          <p class="pop-text">La obesidad tiene base biológica, neurológica y metabólica. Una consulta que parte de eso puede llegar a lugares a los que otras no han llegado.</p>
+          <div class="pop-title">Si vives con sobrepeso u obesidad</div>
+          <p class="pop-text">La salud metabólica tiene base biológica, neurológica y hormonal. Este es un espacio para abordarla con respeto, incluyendo la indicación y el seguimiento de GLP-1 cuando corresponde.</p>
         </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- VIDEOCONSULTA: PARA QUIÉN -->
+  <section class="videoconsulta" id="videoconsulta">
+    <div class="container">
+      <span class="section-label">Videoconsulta</span>
+      <h2 class="section-title">¿Es para mí la <em>videoconsulta?</em></h2>
+      <div class="vc-intro">
+        <p>La videoconsulta funciona muy bien para la mayoría de las consultas de personas adultas, y la atiendo en toda la república mexicana. También puede ser una buena opción si eres neurodivergente y te sientes más cómodo tomando tu consulta desde casa.</p>
+      </div>
+      <div class="vc-grid">
+        <div class="vc-card">
+          <div class="vc-card-title">La videoconsulta es una buena opción para</div>
+          <ul>
+            <li>Estudiar tus síntomas y llegar a un diagnóstico</li>
+            <li>Revisar y ordenar diagnósticos previos que quedaron incompletos</li>
+            <li>Segundas opiniones</li>
+            <li>Salud metabólica e inicio o seguimiento de GLP-1</li>
+            <li>Seguimiento de condiciones que ya están en control</li>
+          </ul>
+        </div>
+        <div class="vc-card">
+          <div class="vc-card-title">Es mejor agendar presencial cuando</div>
+          <ul>
+            <li>Tu caso necesita exploración física directa</li>
+            <li>Se requieren estudios en el momento de la consulta</li>
+            <li>Necesitas una valoración preoperatoria (solo presencial, en Mérida)</li>
+          </ul>
+        </div>
+      </div>
+      <div class="vc-note">
+        Para aprovechar tu consulta al máximo, lo ideal es que acudas con laboratorios recientes. Eso me permite analizar tu caso a fondo y que la consulta sea completa.
+        <span>Si todavía no tienes estudios, también puedo indicarte cuáles necesitas.</span>
       </div>
     </div>
   </section>
@@ -980,16 +1193,16 @@
               <li>HbA1c</li>
               <li>Insulina en ayuno</li>
               <li>TSH y T4 libre</li>
-              <li>InBody o bioimpedancia (si disponible)</li>
+              <li>InBody o bioimpedancia (no es indispensable)</li>
             </ul>
           </div>
         </div>
 
         <div class="paquete-card">
           <div class="paquete-icon">🧠</div>
-          <div class="paquete-title">Neurodivergencia y Salud Física</div>
+          <div class="paquete-title">Salud física en personas neurodivergentes</div>
           <span class="paquete-badge">Video · Presencial</span>
-          <p class="paquete-desc">Para personas con diagnóstico tardío de TDAH, autismo u otras variantes neurológicas que presentan síntomas físicos no explicados del todo. Evaluación integral con enfoque neuroafirmativo.</p>
+          <p class="paquete-desc">Para personas adultas neurodivergentes (TDAH, autismo u otras), con o sin diagnóstico formal, que presentan síntomas físicos no explicados del todo. Evaluación integral de tu salud con enfoque neuroafirmativo. No se realiza el diagnóstico de neurodivergencia; se toma en cuenta para la evaluación.</p>
           <div class="paquete-labs">
             <div class="paquete-labs-title">Acudir con estos laboratorios</div>
             <ul>
@@ -1046,10 +1259,10 @@
                 <div class="precio-row-label">Consulta subsecuente</div>
                 <div class="precio-row-sub">Seguimiento y ajuste</div>
               </div>
-              <div class="precio-amount">$600 <span>MXN</span></div>
+              <div class="precio-amount">$700 <span>MXN</span></div>
             </div>
           </div>
-          <p class="precio-nota">Disponible para toda la república mexicana. Recibes resumen escrito de la consulta al finalizar.</p>
+          <p class="precio-nota">Disponible para toda la república mexicana. Recibes un resumen escrito de la consulta al finalizar.</p>
           <br>
           <a href="https://dracarolinajuarez.setmore.com" class="btn-primary">Agendar videoconsulta →</a>
         </div>
@@ -1062,14 +1275,14 @@
                 <div class="precio-row-label">Consulta inicial</div>
                 <div class="precio-row-sub">1 hora completa</div>
               </div>
-              <div class="precio-amount">$800 <span>MXN</span></div>
+              <div class="precio-amount">$1,000 <span>MXN</span></div>
             </div>
             <div class="precio-row">
               <div>
                 <div class="precio-row-label">Consulta subsecuente</div>
-                <div class="precio-row-sub">Seguimiento y ajuste</div>
+                <div class="precio-row-sub">Según tiempo y complejidad · nunca mayor a la inicial</div>
               </div>
-              <div class="precio-amount">$800 <span>MXN</span></div>
+              <div class="precio-amount">desde $700 <span>MXN</span></div>
             </div>
             <div class="precio-row">
               <div>
@@ -1078,15 +1291,8 @@
               </div>
               <div class="precio-amount">$1,000 <span>MXN</span></div>
             </div>
-            <div class="precio-row">
-              <div>
-                <div class="precio-row-label">Consulta compleja</div>
-                <div class="precio-row-sub">Casos con múltiples condiciones</div>
-              </div>
-              <div class="precio-amount">$1,000 <span>MXN</span></div>
-            </div>
           </div>
-          <p class="precio-nota">Exploración física incluida. Recibes resumen escrito de la consulta al finalizar.</p>
+          <p class="precio-nota">Exploración física incluida. Recibes un resumen escrito de la consulta al finalizar.</p>
           <br>
           <a href="https://calendly.com/dracarojuarez/new-meeting" class="btn-outline">Agendar presencial</a>
         </div>
@@ -1115,7 +1321,7 @@
           <div class="int-block">
             <div class="int-block-icon">📋</div>
             <div class="int-block-title">Historia clínica completa</div>
-            <div class="int-block-text">Sin apuros, sin síntomas ignorados</div>
+            <div class="int-block-text">Con calma y sin síntomas ignorados</div>
           </div>
           <div class="int-block">
             <div class="int-block-icon">🧬</div>
@@ -1137,7 +1343,7 @@
     <div class="cta-final-content">
       <span class="section-label">Agenda tu consulta</span>
       <h2>Tu cuerpo merece atención <em>que lo vea completo.</em></h2>
-      <p>Primera consulta de una hora. Resumen escrito incluido. Sin prisa, sin síntomas ignorados.</p>
+      <p>Primera consulta de una hora. Resumen escrito incluido. Con calma y sin síntomas ignorados.</p>
       <div class="cta-final-btns">
         <a href="https://dracarolinajuarez.setmore.com" class="btn-white">Agendar videoconsulta →</a>
         <a href="https://calendly.com/dracarojuarez/new-meeting" class="btn-outline-white">Agendar presencial</a>
@@ -1145,10 +1351,20 @@
     </div>
   </section>
 
+  <!-- AVISO URGENCIAS -->
+  <section class="aviso-urgencias">
+    <div class="container">
+      <p>
+        Ninguna consulta —presencial o por videoconsulta— es para urgencias médicas.
+        <span>Si tienes una emergencia, acude a un servicio de urgencias o llama al 911.</span>
+      </p>
+    </div>
+  </section>
+
   <!-- FOOTER -->
   <footer>
     <div class="footer-name">Dra. Carolina Juárez Zúñiga</div>
-    <div class="footer-sub">Médica Internista · Cédula 9807953</div>
+    <div class="footer-sub">Médica Internista · Cédula de especialista 9807953</div>
     <div class="footer-links">
       <a href="https://instagram.com/dra.carolinajuarez">Instagram</a>
       <a href="https://dracarolinajuarez.setmore.com">Agendar videoconsulta</a>
