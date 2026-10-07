@@ -1,0 +1,431 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <title>Resistencia a la insulina en Mérida | Dra. Carolina Juárez</title>
+  <meta name="description" content="Evaluación y manejo médico de resistencia a la insulina, prediabetes y síndrome metabólico. Consulta presencial en Mérida y videoconsulta en todo México.">
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Outfit:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --purple: #5b3f8a;
+      --purple-mid: #7052a8;
+      --purple-light: #9b7dd4;
+      --text-dark: #1a1228;
+      --text-mid: #3d2f5c;
+      --text-light: #6b5c8a;
+      --bg-off: #faf8fd;
+      --white: #ffffff;
+    }
+
+    html { scroll-behavior: smooth; }
+    body { font-family: 'Outfit', sans-serif; color: var(--text-dark); background: var(--bg-off); overflow-x: hidden; }
+
+    nav {
+      position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+      padding: 1.2rem 3rem;
+      display: flex; justify-content: space-between; align-items: center;
+      backdrop-filter: blur(12px);
+      background: rgba(255,255,255,0.55);
+      border-bottom: 1px solid rgba(91,63,138,0.1);
+    }
+    .nav-logo { font-family: 'Cormorant Garamond', serif; font-size: 1.1rem; color: var(--purple); text-decoration: none; }
+    .nav-cta {
+      background: var(--purple); color: white; padding: 0.5rem 1.2rem;
+      border-radius: 100px; font-size: 0.8rem; font-weight: 500;
+      text-decoration: none; transition: background 0.2s;
+    }
+    .nav-cta:hover { background: var(--purple-mid); }
+
+    .hero {
+      min-height: 85vh; display: flex; align-items: center;
+      padding: 8rem 3rem 5rem; position: relative; overflow: hidden;
+    }
+    .hero-bg {
+      position: absolute; inset: 0;
+      background:
+        radial-gradient(ellipse 70% 60% at 10% 55%, rgba(212,197,240,0.6) 0%, transparent 60%),
+        radial-gradient(ellipse 55% 65% at 80% 20%, rgba(184,216,255,0.5) 0%, transparent 55%),
+        radial-gradient(ellipse 45% 55% at 60% 90%, rgba(255,210,184,0.35) 0%, transparent 50%),
+        #f5f0ff;
+    }
+    .hero-content { position: relative; z-index: 2; max-width: 720px; }
+    .hero-badge {
+      display: inline-block; font-size: 0.72rem; font-weight: 600;
+      letter-spacing: 0.18em; text-transform: uppercase; color: var(--purple);
+      background: rgba(91,63,138,0.08); border: 1px solid rgba(91,63,138,0.2);
+      padding: 0.4rem 1rem; border-radius: 100px; margin-bottom: 2rem;
+    }
+    .hero h1 {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(2.5rem, 5vw, 4.5rem);
+      font-weight: 300; line-height: 1.1; color: var(--text-dark);
+      margin-bottom: 1.5rem;
+    }
+    .hero h1 em { font-style: italic; color: var(--purple); }
+    .hero-sub {
+      font-size: 1.05rem; font-weight: 300; color: var(--text-mid);
+      line-height: 1.7; max-width: 520px; margin-bottom: 2.5rem;
+    }
+    .hero-btns { display: flex; gap: 1rem; flex-wrap: wrap; }
+
+    .btn-primary {
+      display: inline-flex; align-items: center; gap: 0.5rem;
+      background: var(--purple); color: white;
+      padding: 0.9rem 2rem; border-radius: 100px;
+      font-size: 0.9rem; font-weight: 500; letter-spacing: 0.04em;
+      text-decoration: none; transition: all 0.25s;
+      box-shadow: 0 4px 20px rgba(91,63,138,0.3);
+    }
+    .btn-primary:hover { background: var(--purple-mid); transform: translateY(-2px); box-shadow: 0 8px 28px rgba(91,63,138,0.4); }
+
+    .btn-outline {
+      display: inline-flex; align-items: center; gap: 0.5rem;
+      background: transparent; color: var(--purple);
+      padding: 0.9rem 2rem; border-radius: 100px;
+      border: 2px solid var(--purple);
+      font-size: 0.9rem; font-weight: 500; letter-spacing: 0.04em;
+      text-decoration: none; transition: all 0.25s;
+    }
+    .btn-outline:hover { background: rgba(91,63,138,0.06); transform: translateY(-2px); }
+
+    section { padding: 5rem 3rem; }
+    .container { max-width: 1100px; margin: 0 auto; }
+
+    .section-label {
+      font-size: 0.72rem; font-weight: 600; letter-spacing: 0.2em;
+      text-transform: uppercase; color: var(--purple-light);
+      margin-bottom: 1rem; display: block;
+    }
+    .section-title {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(1.8rem, 3vw, 2.8rem);
+      font-weight: 300; color: var(--text-dark);
+      line-height: 1.2; margin-bottom: 1.5rem;
+    }
+    .section-title em { font-style: italic; color: var(--purple); }
+
+    /* QUÉ ES */
+    .que-es { background: var(--white); }
+    .que-es-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 5rem; align-items: start; }
+    .que-es p { font-size: 1rem; font-weight: 300; color: var(--text-mid); line-height: 1.8; margin-bottom: 1.2rem; }
+
+    .progresion {
+      background: rgba(91,63,138,0.04);
+      border: 1px solid rgba(91,63,138,0.1);
+      border-radius: 16px; padding: 2rem;
+    }
+    .prog-label {
+      font-size: 0.7rem; font-weight: 600; letter-spacing: 0.15em;
+      text-transform: uppercase; color: var(--purple-light); margin-bottom: 1.5rem; display: block;
+    }
+    .prog-steps { display: flex; flex-direction: column; gap: 0; }
+    .prog-step {
+      display: flex; align-items: flex-start; gap: 1rem; position: relative;
+    }
+    .prog-step + .prog-step { margin-top: 0; }
+    .prog-left { display: flex; flex-direction: column; align-items: center; flex-shrink: 0; }
+    .prog-dot {
+      width: 10px; height: 10px; border-radius: 50%;
+      background: var(--purple-light); flex-shrink: 0; margin-top: 4px;
+    }
+    .prog-dot.danger { background: #c0637a; }
+    .prog-line { width: 1px; background: rgba(91,63,138,0.2); flex-grow: 1; min-height: 28px; }
+    .prog-text { padding-bottom: 1.5rem; }
+    .prog-name { font-size: 0.9rem; font-weight: 500; color: var(--text-dark); }
+    .prog-desc { font-size: 0.8rem; font-weight: 300; color: var(--text-light); margin-top: 0.2rem; line-height: 1.5; }
+
+    /* SEÑALES */
+    .senales {
+      background: linear-gradient(160deg, rgba(212,197,240,0.12) 0%, rgba(184,216,255,0.1) 50%, rgba(255,210,184,0.12) 100%);
+    }
+    .senales-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.2rem; margin-top: 2.5rem; }
+    .senal-card {
+      background: rgba(255,255,255,0.8); backdrop-filter: blur(10px);
+      border: 1px solid rgba(91,63,138,0.1); border-radius: 16px; padding: 1.8rem;
+      position: relative; overflow: hidden;
+    }
+    .senal-card::before {
+      content: ''; position: absolute; top: 0; left: 0; right: 0; height: 3px;
+      background: linear-gradient(90deg, rgba(155,125,212,1), rgba(184,216,255,1));
+    }
+    .senal-nombre { font-size: 0.92rem; font-weight: 500; color: var(--text-dark); margin-bottom: 0.4rem; }
+    .senal-desc { font-size: 0.83rem; font-weight: 300; color: var(--text-mid); line-height: 1.6; }
+
+    /* RELACIONES */
+    .relaciones { background: var(--white); }
+    .relaciones-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin-top: 2.5rem; }
+    .rel-item {
+      display: flex; align-items: flex-start; gap: 1rem;
+      padding: 1.3rem; border-radius: 12px;
+      background: rgba(91,63,138,0.03);
+      border: 1px solid rgba(91,63,138,0.07);
+    }
+    .rel-dot { width: 8px; height: 8px; border-radius: 50%; background: var(--purple-light); flex-shrink: 0; margin-top: 5px; }
+    .rel-content { min-width: 0; }
+    .rel-title { font-size: 0.92rem; font-weight: 500; color: var(--text-dark); margin-bottom: 0.2rem; }
+    .rel-text { font-size: 0.83rem; font-weight: 300; color: var(--text-light); line-height: 1.5; }
+
+    /* ENFOQUE */
+    .enfoque { background: var(--purple); position: relative; overflow: hidden; }
+    .enfoque::before {
+      content: ''; position: absolute; inset: 0;
+      background:
+        radial-gradient(ellipse 60% 80% at 20% 50%, rgba(212,197,240,0.15) 0%, transparent 60%),
+        radial-gradient(ellipse 50% 60% at 80% 30%, rgba(184,238,221,0.1) 0%, transparent 55%);
+    }
+    .enfoque-content { position: relative; z-index: 2; max-width: 700px; }
+    .enfoque .section-label { color: rgba(255,255,255,0.5); }
+    .enfoque .section-title { color: white; }
+    .enfoque p { font-size: 1rem; font-weight: 300; color: rgba(255,255,255,0.8); line-height: 1.8; margin-bottom: 1.2rem; }
+
+    /* QUÉ INCLUYE */
+    .incluye { background: var(--bg-off); }
+    .incluye-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 1rem; margin-top: 2.5rem; }
+    .incluye-item {
+      background: var(--white); border: 1px solid rgba(91,63,138,0.1);
+      border-radius: 14px; padding: 1.5rem;
+    }
+    .incluye-num {
+      font-family: 'Cormorant Garamond', serif; font-size: 2rem;
+      font-weight: 300; color: rgba(91,63,138,0.15); line-height: 1; margin-bottom: 0.5rem;
+    }
+    .incluye-title { font-size: 0.92rem; font-weight: 500; color: var(--text-dark); margin-bottom: 0.3rem; }
+    .incluye-text { font-size: 0.85rem; font-weight: 300; color: var(--text-light); line-height: 1.6; }
+
+    /* CTA */
+    .cta-final { background: var(--white); text-align: center; padding: 6rem 3rem; }
+    .cta-final h2 { font-family: 'Cormorant Garamond', serif; font-size: clamp(2rem, 3.5vw, 3rem); font-weight: 300; color: var(--text-dark); margin-bottom: 1rem; }
+    .cta-final p { font-size: 1rem; font-weight: 300; color: var(--text-mid); margin-bottom: 2.5rem; max-width: 480px; margin-left: auto; margin-right: auto; line-height: 1.7; }
+    .cta-btns { display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap; }
+
+    footer { background: var(--text-dark); padding: 2.5rem 3rem; text-align: center; }
+    .footer-name { font-family: 'Cormorant Garamond', serif; font-size: 1.1rem; font-weight: 300; color: rgba(255,255,255,0.9); margin-bottom: 0.4rem; }
+    .footer-sub { font-size: 0.75rem; color: rgba(255,255,255,0.35); letter-spacing: 0.08em; margin-bottom: 1rem; }
+    .footer-links { display: flex; gap: 1.5rem; justify-content: center; margin-bottom: 1rem; }
+    .footer-links a { font-size: 0.78rem; color: rgba(255,255,255,0.45); text-decoration: none; transition: color 0.2s; }
+    .footer-links a:hover { color: var(--purple-light); }
+    .footer-copy { font-size: 0.7rem; color: rgba(255,255,255,0.2); }
+
+    @media (max-width: 900px) {
+      nav { padding: 1rem 1.5rem; }
+      section { padding: 4rem 1.5rem; }
+      .hero { padding: 7rem 1.5rem 4rem; }
+      .que-es-grid, .relaciones-grid, .incluye-grid { grid-template-columns: 1fr; gap: 2rem; }
+      .senales-grid { grid-template-columns: 1fr; }
+      footer { padding: 2rem 1.5rem; }
+    }
+  </style>
+</head>
+<body>
+
+  <nav>
+    <a href="https://carojuarez.doctor" class="nav-logo">Dra. Carolina Juárez</a>
+    <a href="https://dracarolinajuarez.setmore.com" class="nav-cta">Agendar consulta</a>
+  </nav>
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="hero-bg"></div>
+    <div class="hero-content">
+      <span class="hero-badge">Mérida, Yucatán · Videoconsulta en todo México</span>
+      <h1>Resistencia a la insulina: <em>un proceso silencioso</em> con señales claras.</h1>
+      <p class="hero-sub">Los niveles de glucosa pueden verse "normales" en un estudio de rutina — y aun así haber un desequilibrio metabólico activo que conviene atender a tiempo.</p>
+      <div class="hero-btns">
+        <a href="https://dracarolinajuarez.setmore.com" class="btn-primary">Agendar videoconsulta →</a>
+        <a href="https://calendly.com/dracarojuarez/new-meeting" class="btn-outline">Consulta presencial</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- QUÉ ES -->
+  <section class="que-es">
+    <div class="container">
+      <div class="que-es-grid">
+        <div>
+          <span class="section-label">Qué está pasando</span>
+          <h2 class="section-title">Cuando el páncreas trabaja de más <em>para mantener el equilibrio.</em></h2>
+          <p>La insulina es la hormona que permite que la glucosa entre a las células y se convierta en energía. Cuando las células no responden bien a esa señal, el páncreas compensa produciendo cada vez más insulina.</p>
+          <p>Durante años, los niveles de azúcar pueden mantenerse dentro del rango normal en los estudios de rutina. Mientras tanto, el esfuerzo metabólico silencioso va alterando progresivamente otros sistemas del cuerpo.</p>
+          <p>Identificarlo a tiempo cambia el pronóstico.</p>
+        </div>
+        <div class="progresion">
+          <span class="prog-label">Progresión sin intervención</span>
+          <div class="prog-steps">
+            <div class="prog-step">
+              <div class="prog-left">
+                <div class="prog-dot"></div>
+                <div class="prog-line"></div>
+              </div>
+              <div class="prog-text">
+                <div class="prog-name">Resistencia a la insulina</div>
+                <div class="prog-desc">Las células no responden a la señal. El páncreas compensa.</div>
+              </div>
+            </div>
+            <div class="prog-step">
+              <div class="prog-left">
+                <div class="prog-dot"></div>
+                <div class="prog-line"></div>
+              </div>
+              <div class="prog-text">
+                <div class="prog-name">Prediabetes</div>
+                <div class="prog-desc">La glucosa empieza a salirse del rango. El páncreas aún puede compensar.</div>
+              </div>
+            </div>
+            <div class="prog-step">
+              <div class="prog-left">
+                <div class="prog-dot danger"></div>
+              </div>
+              <div class="prog-text">
+                <div class="prog-name">Diabetes tipo 2 y daño cardiovascular</div>
+                <div class="prog-desc">El páncreas se agota. La glucosa elevada genera inflamación crónica y daño vascular.</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SEÑALES -->
+  <section class="senales">
+    <div class="container">
+      <span class="section-label">Señales frecuentes</span>
+      <h2 class="section-title">El cuerpo deja pistas <em>antes de que los estudios las muestren.</em></h2>
+      <div class="senales-grid">
+        <div class="senal-card">
+          <div class="senal-nombre">Oscurecimiento de la piel en pliegues</div>
+          <div class="senal-desc">Textura aterciopelada y color más oscuro en cuello, axilas o ingle — lo que se conoce como acantosis nigricans.</div>
+        </div>
+        <div class="senal-card">
+          <div class="senal-nombre">Fibromas blandos en cuello o axilas</div>
+          <div class="senal-desc">Pequeñas verrugas o acrocordones que aparecen con frecuencia y sin causa aparente.</div>
+        </div>
+        <div class="senal-card">
+          <div class="senal-nombre">Grasa abdominal difícil de reducir</div>
+          <div class="senal-desc">Acumulación focalizada en el abdomen que no responde como se esperaría a cambios en la alimentación o el ejercicio.</div>
+        </div>
+        <div class="senal-card">
+          <div class="senal-nombre">Fatiga después de comer</div>
+          <div class="senal-desc">Somnolencia intensa o "bajón de energía" después de las comidas, especialmente las que incluyen carbohidratos.</div>
+        </div>
+        <div class="senal-card">
+          <div class="senal-nombre">Antojo constante de dulce o carbohidratos</div>
+          <div class="senal-desc">Necesidad frecuente de consumir alimentos dulces o refinados a lo largo del día, incluso sin haber pasado mucho tiempo sin comer.</div>
+        </div>
+        <div class="senal-card">
+          <div class="senal-nombre">Cansancio crónico sin causa clara</div>
+          <div class="senal-desc">Fatiga persistente que no mejora con descanso y que suele atribuirse a otras causas antes de evaluar el metabolismo.</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- RELACIONES -->
+  <section class="relaciones">
+    <div class="container">
+      <span class="section-label">Condiciones asociadas</span>
+      <h2 class="section-title">La resistencia a la insulina <em>no es solo un tema de glucosa.</em></h2>
+      <div class="relaciones-grid">
+        <div class="rel-item">
+          <div class="rel-dot"></div>
+          <div class="rel-content">
+            <div class="rel-title">Síndrome de ovario poliquístico (SOP)</div>
+            <div class="rel-text">Alteraciones menstruales, dificultad para ovular y exceso de andrógenos con frecuencia tienen base metabólica.</div>
+          </div>
+        </div>
+        <div class="rel-item">
+          <div class="rel-dot"></div>
+          <div class="rel-content">
+            <div class="rel-title">Hígado graso (MASLD)</div>
+            <div class="rel-text">Acumulación de grasa en las células hepáticas que puede avanzar de forma silenciosa.</div>
+          </div>
+        </div>
+        <div class="rel-item">
+          <div class="rel-dot"></div>
+          <div class="rel-content">
+            <div class="rel-title">Dislipidemia</div>
+            <div class="rel-text">Triglicéridos elevados y colesterol con patrón alterado, frecuentemente presentes desde etapas tempranas.</div>
+          </div>
+        </div>
+        <div class="rel-item">
+          <div class="rel-dot"></div>
+          <div class="rel-content">
+            <div class="rel-title">Síndrome metabólico</div>
+            <div class="rel-text">Combinación de presión alta, glucosa alterada, cintura aumentada y triglicéridos elevados que multiplica el riesgo cardiovascular.</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ENFOQUE -->
+  <section class="enfoque">
+    <div class="container">
+      <div class="enfoque-content">
+        <span class="section-label">Cómo se aborda</span>
+        <h2 class="section-title">Cambiar la dirección del problema <em>antes de que progrese.</em></h2>
+        <p>La resistencia a la insulina es una condición modificable. El objetivo no es llegar a un número en la báscula, sino mejorar cómo funciona el metabolismo y reducir el riesgo de que el proceso avance.</p>
+        <p>El plan de cada persona combina lo que tiene mayor impacto para su caso: ajustes en la alimentación y el movimiento adaptados a sus ritmos reales, y cuando hay indicación, herramientas farmacológicas — incluyendo agonistas de GLP-1 — que mejoran la sensibilidad a la insulina y apoyan el proceso de manera sostenible.</p>
+        <p>No hay una sola respuesta correcta para todos. Hay una evaluación, un plan y un seguimiento.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- QUÉ INCLUYE -->
+  <section class="incluye">
+    <div class="container">
+      <span class="section-label">En consulta</span>
+      <h2 class="section-title">Qué incluye la <em>valoración metabólica.</em></h2>
+      <div class="incluye-grid">
+        <div class="incluye-item">
+          <div class="incluye-num">01</div>
+          <div class="incluye-title">Evaluación clínica completa</div>
+          <div class="incluye-text">Historia metabólica, antecedentes familiares, señales físicas y revisión de estudios previos para tener el panorama completo.</div>
+        </div>
+        <div class="incluye-item">
+          <div class="incluye-num">02</div>
+          <div class="incluye-title">Estudios de laboratorio dirigidos</div>
+          <div class="incluye-text">Química sanguínea, perfil de insulina, hemoglobina glucosilada y los estudios adicionales que correspondan a cada caso.</div>
+        </div>
+        <div class="incluye-item">
+          <div class="incluye-num">03</div>
+          <div class="incluye-title">Plan de tratamiento estructurado</div>
+          <div class="incluye-text">Estrategia adaptada: alimentación, movimiento y farmacológica cuando hay indicación, con metas claras y un seguimiento definido.</div>
+        </div>
+        <div class="incluye-item">
+          <div class="incluye-num">04</div>
+          <div class="incluye-title">Seguimiento continuo</div>
+          <div class="incluye-text">Consultas de seguimiento para ajustar el plan según cómo responde el cuerpo y avanzar hacia los objetivos metabólicos.</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="cta-final">
+    <div class="container">
+      <h2>Conoce tu estado metabólico <em>real.</em></h2>
+      <p>Una valoración clínica especializada te permite saber dónde estás y qué caminos tiene sentido tomar para ti.</p>
+      <div class="cta-btns">
+        <a href="https://dracarolinajuarez.setmore.com" class="btn-primary">Agendar videoconsulta →</a>
+        <a href="https://calendly.com/dracarojuarez/new-meeting" class="btn-outline">Consulta en Mérida</a>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="footer-name">Dra. Carolina Juárez Zúñiga</div>
+    <div class="footer-sub">Médica Internista · Cédulas 7184901 y 9807953</div>
+    <div class="footer-links">
+      <a href="https://carojuarez.doctor">Inicio</a>
+      <a href="https://carojuarez.doctor/glp1">GLP-1</a>
+      <a href="https://www.instagram.com/dra.carolinajuarez" target="_blank">Instagram</a>
+    </div>
+    <div class="footer-copy">© 2026 Dra. Carolina Juárez · Mérida, Yucatán</div>
+  </footer>
+
+</body>
+</html>
