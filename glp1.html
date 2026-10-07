@@ -1,0 +1,369 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <title>Tratamiento con GLP-1 en Mérida y videoconsulta | Dra. Carolina Juárez</title>
+  <meta name="description" content="Semaglutida (Ozempic, Wegovy), tirzepatida (Mounjaro) y liraglutida (Saxenda). Manejo médico especializado en Mérida y por videoconsulta en todo México.">
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Outfit:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --purple: #5b3f8a;
+      --purple-mid: #7052a8;
+      --purple-light: #9b7dd4;
+      --text-dark: #1a1228;
+      --text-mid: #3d2f5c;
+      --text-light: #6b5c8a;
+      --bg-off: #faf8fd;
+      --white: #ffffff;
+    }
+
+    html { scroll-behavior: smooth; }
+    body { font-family: 'Outfit', sans-serif; color: var(--text-dark); background: var(--bg-off); overflow-x: hidden; }
+
+    nav {
+      position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+      padding: 1.2rem 3rem;
+      display: flex; justify-content: space-between; align-items: center;
+      backdrop-filter: blur(12px);
+      background: rgba(255,255,255,0.55);
+      border-bottom: 1px solid rgba(91,63,138,0.1);
+    }
+    .nav-logo { font-family: 'Cormorant Garamond', serif; font-size: 1.1rem; color: var(--purple); text-decoration: none; }
+    .nav-cta {
+      background: var(--purple); color: white; padding: 0.5rem 1.2rem;
+      border-radius: 100px; font-size: 0.8rem; font-weight: 500;
+      text-decoration: none; transition: background 0.2s;
+    }
+    .nav-cta:hover { background: var(--purple-mid); }
+
+    .hero {
+      min-height: 85vh; display: flex; align-items: center;
+      padding: 8rem 3rem 5rem; position: relative; overflow: hidden;
+    }
+    .hero-bg {
+      position: absolute; inset: 0;
+      background:
+        radial-gradient(ellipse 70% 60% at 15% 50%, rgba(212,197,240,0.65) 0%, transparent 60%),
+        radial-gradient(ellipse 60% 70% at 85% 25%, rgba(184,216,240,0.55) 0%, transparent 55%),
+        radial-gradient(ellipse 50% 60% at 55% 85%, rgba(184,238,221,0.45) 0%, transparent 50%),
+        #f5f0ff;
+    }
+    .hero-content { position: relative; z-index: 2; max-width: 720px; }
+    .hero-badge {
+      display: inline-block; font-size: 0.72rem; font-weight: 600;
+      letter-spacing: 0.18em; text-transform: uppercase; color: var(--purple);
+      background: rgba(91,63,138,0.08); border: 1px solid rgba(91,63,138,0.2);
+      padding: 0.4rem 1rem; border-radius: 100px; margin-bottom: 2rem;
+    }
+    .hero h1 {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(2.5rem, 5vw, 4.5rem);
+      font-weight: 300; line-height: 1.1; color: var(--text-dark);
+      margin-bottom: 1.5rem;
+    }
+    .hero h1 em { font-style: italic; color: var(--purple); }
+    .hero-sub {
+      font-size: 1.05rem; font-weight: 300; color: var(--text-mid);
+      line-height: 1.7; max-width: 500px; margin-bottom: 2.5rem;
+    }
+    .hero-btns { display: flex; gap: 1rem; flex-wrap: wrap; }
+
+    .btn-primary {
+      display: inline-flex; align-items: center; gap: 0.5rem;
+      background: var(--purple); color: white;
+      padding: 0.9rem 2rem; border-radius: 100px;
+      font-size: 0.9rem; font-weight: 500; letter-spacing: 0.04em;
+      text-decoration: none; transition: all 0.25s;
+      box-shadow: 0 4px 20px rgba(91,63,138,0.3);
+    }
+    .btn-primary:hover { background: var(--purple-mid); transform: translateY(-2px); box-shadow: 0 8px 28px rgba(91,63,138,0.4); }
+
+    .btn-outline {
+      display: inline-flex; align-items: center; gap: 0.5rem;
+      background: transparent; color: var(--purple);
+      padding: 0.9rem 2rem; border-radius: 100px;
+      border: 2px solid var(--purple);
+      font-size: 0.9rem; font-weight: 500; letter-spacing: 0.04em;
+      text-decoration: none; transition: all 0.25s;
+    }
+    .btn-outline:hover { background: rgba(91,63,138,0.06); transform: translateY(-2px); }
+
+    section { padding: 5rem 3rem; }
+    .container { max-width: 1100px; margin: 0 auto; }
+
+    .section-label {
+      font-size: 0.72rem; font-weight: 600; letter-spacing: 0.2em;
+      text-transform: uppercase; color: var(--purple-light);
+      margin-bottom: 1rem; display: block;
+    }
+    .section-title {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(1.8rem, 3vw, 2.8rem);
+      font-weight: 300; color: var(--text-dark);
+      line-height: 1.2; margin-bottom: 1.5rem;
+    }
+    .section-title em { font-style: italic; color: var(--purple); }
+
+    /* QUÉ SON */
+    .que-son { background: var(--white); }
+    .que-son-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 5rem; align-items: center; }
+    .que-son p { font-size: 1rem; font-weight: 300; color: var(--text-mid); line-height: 1.8; margin-bottom: 1.2rem; }
+
+    .medicamentos { display: flex; flex-direction: column; gap: 1rem; }
+    .med-card {
+      background: linear-gradient(135deg, rgba(212,197,240,0.15), rgba(184,238,221,0.15));
+      border: 1px solid rgba(91,63,138,0.12);
+      border-radius: 14px; padding: 1.2rem 1.5rem;
+    }
+    .med-nombre { font-size: 0.95rem; font-weight: 500; color: var(--text-dark); margin-bottom: 0.2rem; }
+    .med-marcas { font-size: 0.8rem; font-weight: 300; color: var(--text-light); }
+
+    /* CANDIDATOS */
+    .candidatos {
+      background: linear-gradient(160deg, rgba(212,197,240,0.15) 0%, rgba(184,216,240,0.12) 50%, rgba(184,238,221,0.15) 100%);
+    }
+    .candidatos-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem; margin-top: 2.5rem; }
+    .cand-card {
+      background: rgba(255,255,255,0.75); backdrop-filter: blur(12px);
+      border: 1px solid rgba(91,63,138,0.1); border-radius: 16px; padding: 2rem;
+      position: relative; overflow: hidden;
+    }
+    .cand-card::before {
+      content: ''; position: absolute; top: 0; left: 0; right: 0; height: 3px;
+      background: linear-gradient(90deg, rgba(212,197,240,1), rgba(184,238,221,1));
+    }
+    .cand-title { font-size: 0.95rem; font-weight: 500; color: var(--text-dark); margin-bottom: 0.5rem; }
+    .cand-text { font-size: 0.88rem; font-weight: 300; color: var(--text-mid); line-height: 1.6; }
+
+    /* BENEFICIOS */
+    .beneficios { background: var(--white); }
+    .beneficios-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin-top: 2.5rem; }
+    .ben-item {
+      display: flex; align-items: flex-start; gap: 1rem;
+      padding: 1.2rem; border-radius: 12px;
+      background: rgba(91,63,138,0.03);
+      border: 1px solid rgba(91,63,138,0.07);
+    }
+    .ben-dot { width: 8px; height: 8px; border-radius: 50%; background: var(--purple-light); flex-shrink: 0; margin-top: 6px; }
+    .ben-text { font-size: 0.92rem; font-weight: 300; color: var(--text-mid); line-height: 1.6; }
+
+    /* EXPERIENCIA */
+    .experiencia {
+      background: var(--purple); position: relative; overflow: hidden;
+    }
+    .experiencia::before {
+      content: ''; position: absolute; inset: 0;
+      background:
+        radial-gradient(ellipse 60% 80% at 20% 50%, rgba(212,197,240,0.15) 0%, transparent 60%),
+        radial-gradient(ellipse 50% 60% at 80% 30%, rgba(184,238,221,0.1) 0%, transparent 55%);
+    }
+    .experiencia-content { position: relative; z-index: 2; max-width: 700px; }
+    .experiencia .section-label { color: rgba(255,255,255,0.5); }
+    .experiencia .section-title { color: white; }
+    .experiencia p { font-size: 1rem; font-weight: 300; color: rgba(255,255,255,0.8); line-height: 1.8; margin-bottom: 1.2rem; }
+
+    /* QUÉ INCLUYE */
+    .incluye { background: var(--bg-off); }
+    .incluye-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 1rem; margin-top: 2.5rem; }
+    .incluye-item {
+      background: var(--white); border: 1px solid rgba(91,63,138,0.1);
+      border-radius: 14px; padding: 1.5rem;
+    }
+    .incluye-num {
+      font-family: 'Cormorant Garamond', serif; font-size: 2rem;
+      font-weight: 300; color: rgba(91,63,138,0.15); line-height: 1; margin-bottom: 0.5rem;
+    }
+    .incluye-title { font-size: 0.92rem; font-weight: 500; color: var(--text-dark); margin-bottom: 0.3rem; }
+    .incluye-text { font-size: 0.85rem; font-weight: 300; color: var(--text-light); line-height: 1.6; }
+
+    /* CTA */
+    .cta-final { background: var(--white); text-align: center; padding: 6rem 3rem; }
+    .cta-final h2 { font-family: 'Cormorant Garamond', serif; font-size: clamp(2rem, 3.5vw, 3rem); font-weight: 300; color: var(--text-dark); margin-bottom: 1rem; }
+    .cta-final p { font-size: 1rem; font-weight: 300; color: var(--text-mid); margin-bottom: 2.5rem; max-width: 480px; margin-left: auto; margin-right: auto; line-height: 1.7; }
+    .cta-btns { display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap; }
+
+    footer { background: var(--text-dark); padding: 2.5rem 3rem; text-align: center; }
+    .footer-name { font-family: 'Cormorant Garamond', serif; font-size: 1.1rem; font-weight: 300; color: rgba(255,255,255,0.9); margin-bottom: 0.4rem; }
+    .footer-sub { font-size: 0.75rem; color: rgba(255,255,255,0.35); letter-spacing: 0.08em; margin-bottom: 1rem; }
+    .footer-links { display: flex; gap: 1.5rem; justify-content: center; margin-bottom: 1rem; }
+    .footer-links a { font-size: 0.78rem; color: rgba(255,255,255,0.45); text-decoration: none; transition: color 0.2s; }
+    .footer-links a:hover { color: var(--purple-light); }
+    .footer-copy { font-size: 0.7rem; color: rgba(255,255,255,0.2); }
+
+    @media (max-width: 900px) {
+      nav { padding: 1rem 1.5rem; }
+      section { padding: 4rem 1.5rem; }
+      .hero { padding: 7rem 1.5rem 4rem; }
+      .que-son-grid, .beneficios-grid, .incluye-grid { grid-template-columns: 1fr; gap: 2rem; }
+      .candidatos-grid { grid-template-columns: 1fr; }
+      footer { padding: 2rem 1.5rem; }
+    }
+  </style>
+</head>
+<body>
+
+  <nav>
+    <a href="https://carojuarez.doctor" class="nav-logo">Dra. Carolina Juárez</a>
+    <a href="https://dracarolinajuarez.setmore.com" class="nav-cta">Agendar consulta</a>
+  </nav>
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="hero-bg"></div>
+    <div class="hero-content">
+      <span class="hero-badge">Mérida, Yucatán · Videoconsulta en todo México</span>
+      <h1>Manejo médico de <em>GLP-1</em> con experiencia real.</h1>
+      <p class="hero-sub">Semaglutida, tirzepatida y liraglutida — no solo para bajar de peso. Para mejorar tu metabolismo y reducir el riesgo de enfermedades crónicas.</p>
+      <div class="hero-btns">
+        <a href="https://dracarolinajuarez.setmore.com" class="btn-primary">Agendar videoconsulta →</a>
+        <a href="https://calendly.com/dracarojuarez/new-meeting" class="btn-outline">Agendar presencial</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- QUÉ SON -->
+  <section class="que-son">
+    <div class="container">
+      <div class="que-son-grid">
+        <div>
+          <span class="section-label">Los medicamentos</span>
+          <h2 class="section-title">¿Qué son los <em>GLP-1?</em></h2>
+          <p>Los agonistas del receptor GLP-1 son medicamentos que actúan sobre el metabolismo de formas que van más allá de la pérdida de peso: mejoran la sensibilidad a la insulina, reducen la inflamación y disminuyen el riesgo cardiovascular.</p>
+          <p>Se usan en el manejo de obesidad, prediabetes, diabetes tipo 2 y síndrome metabólico — siempre con seguimiento médico.</p>
+        </div>
+        <div class="medicamentos">
+          <div style="font-size: 0.72rem; font-weight: 600; letter-spacing: 0.15em; text-transform: uppercase; color: var(--purple-light); margin-bottom: 0.5rem;">Inyectables</div>
+          <div class="med-card">
+            <div class="med-nombre">Semaglutida</div>
+            <div class="med-marcas">Ozempic · Wegovy</div>
+          </div>
+          <div class="med-card">
+            <div class="med-nombre">Tirzepatida</div>
+            <div class="med-marcas">Mounjaro · Zepbound</div>
+          </div>
+          <div class="med-card">
+            <div class="med-nombre">Liraglutida</div>
+            <div class="med-marcas">Saxenda · Victoza</div>
+          </div>
+          <div style="font-size: 0.72rem; font-weight: 600; letter-spacing: 0.15em; text-transform: uppercase; color: var(--purple-light); margin: 1rem 0 0.5rem;">Orales</div>
+          <div class="med-card">
+            <div class="med-nombre">Semaglutida oral</div>
+            <div class="med-marcas">Wegovy píldora · Rybelsus</div>
+          </div>
+          <div class="med-card">
+            <div class="med-nombre">Orforglipron</div>
+            <div class="med-marcas">Foundayo — sin restricciones de comida ni agua</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CANDIDATOS -->
+  <section class="candidatos">
+    <div class="container">
+      <span class="section-label">¿Es para ti?</span>
+      <h2 class="section-title">Puede ser una opción si...</h2>
+      <div class="candidatos-grid">
+        <div class="cand-card">
+          <div class="cand-title">Tienes obesidad o sobrepeso con riesgo metabólico</div>
+          <p class="cand-text">Resistencia a la insulina, prediabetes, dislipidemia o hipertensión asociada.</p>
+        </div>
+        <div class="cand-card">
+          <div class="cand-title">Ya tienes diabetes tipo 2</div>
+          <p class="cand-text">Como parte del manejo metabólico integral, con o sin otros medicamentos.</p>
+        </div>
+        <div class="cand-card">
+          <div class="cand-title">Ya iniciaste GLP-1 y necesitas seguimiento</div>
+          <p class="cand-text">Efectos secundarios, ajuste de dosis, estancamiento o dudas sobre cómo continuar.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- BENEFICIOS -->
+  <section class="beneficios">
+    <div class="container">
+      <span class="section-label">Más allá del peso</span>
+      <h2 class="section-title">Lo que estos medicamentos <em>pueden hacer.</em></h2>
+      <div class="beneficios-grid">
+        <div class="ben-item"><span class="ben-dot"></span><span class="ben-text">Mejorar la sensibilidad a la insulina y reducir glucosa en ayuno</span></div>
+        <div class="ben-item"><span class="ben-dot"></span><span class="ben-text">Reducir el riesgo cardiovascular en personas con diabetes tipo 2</span></div>
+        <div class="ben-item"><span class="ben-dot"></span><span class="ben-text">Disminuir la inflamación sistémica de bajo grado</span></div>
+        <div class="ben-item"><span class="ben-dot"></span><span class="ben-text">Mejorar el perfil de lípidos — triglicéridos y colesterol</span></div>
+        <div class="ben-item"><span class="ben-dot"></span><span class="ben-text">Reducir la progresión de prediabetes a diabetes tipo 2</span></div>
+        <div class="ben-item"><span class="ben-dot"></span><span class="ben-text">Pérdida de peso sostenida con preservación de masa muscular con manejo adecuado</span></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- EXPERIENCIA -->
+  <section class="experiencia">
+    <div class="container">
+      <div class="experiencia-content">
+        <span class="section-label">Por qué yo</span>
+        <h2 class="section-title">Dos años manejando GLP-1 <em>en volumen real.</em></h2>
+        <p>Llevar más de 2 años en telemedicina dedicada al seguimiento de pacientes en tratamiento con GLP-1 me ha permitido ver de cerca cientos de casos reales: cómo reacciona el cuerpo, cómo gestionar los efectos secundarios, cuándo ajustar la dosis y cómo superar los momentos de estancamiento.</p>
+        <p>Por eso, en mi consulta particular no considero los GLP-1 una moda, sino una herramienta metabólica poderosa. Su uso requiere criterio médico, seguimiento continuo y una estrategia estructurada a la medida de la vida de cada persona.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- QUÉ INCLUYE -->
+  <section class="incluye">
+    <div class="container">
+      <span class="section-label">La consulta</span>
+      <h2 class="section-title">Qué incluye el <em>seguimiento.</em></h2>
+      <div class="incluye-grid">
+        <div class="incluye-item">
+          <div class="incluye-num">01</div>
+          <div class="incluye-title">Evaluación metabólica completa</div>
+          <div class="incluye-text">Revisión de laboratorios, historial clínico y contexto — para saber si eres candidata y qué medicamento tiene más sentido.</div>
+        </div>
+        <div class="incluye-item">
+          <div class="incluye-num">02</div>
+          <div class="incluye-title">Indicación y plan de inicio</div>
+          <div class="incluye-text">Dosis inicial, ajuste progresivo y qué esperar en las primeras semanas — incluyendo cómo manejar efectos secundarios.</div>
+        </div>
+        <div class="incluye-item">
+          <div class="incluye-num">03</div>
+          <div class="incluye-title">Seguimiento por videoconsulta</div>
+          <div class="incluye-text">Consultas subsecuentes para ajustar dosis, revisar laboratorios y mantener el avance metabólico.</div>
+        </div>
+        <div class="incluye-item">
+          <div class="incluye-num">04</div>
+          <div class="incluye-title">Resumen escrito de cada consulta</div>
+          <div class="incluye-text">Al finalizar cada consulta recibes un resumen con el plan, los ajustes y los próximos pasos.</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA FINAL -->
+  <section class="cta-final">
+    <span class="section-label" style="display:block; text-align:center;">Agenda tu consulta</span>
+    <h2>El primer paso es una <em>evaluación completa.</em></h2>
+    <p>Una hora. Revisamos tus laboratorios, tu historial y construimos un plan que tenga sentido para ti.</p>
+    <div class="cta-btns">
+      <a href="https://dracarolinajuarez.setmore.com" class="btn-primary">Agendar videoconsulta →</a>
+      <a href="https://calendly.com/dracarojuarez/new-meeting" class="btn-outline">Agendar presencial</a>
+    </div>
+  </section>
+
+  <footer>
+    <div class="footer-name">Dra. Carolina Juárez Zúñiga</div>
+    <div class="footer-sub">Médica Internista · Cédulas 7184901 y 9807953</div>
+    <div class="footer-links">
+      <a href="https://carojuarez.doctor">Inicio</a>
+      <a href="https://instagram.com/dra.carolinajuarez">Instagram</a>
+      <a href="https://dracarolinajuarez.setmore.com">Agendar videoconsulta</a>
+      <a href="https://calendly.com/dracarojuarez/new-meeting">Agendar presencial</a>
+    </div>
+    <div class="footer-copy">© 2026 Dra. Carolina Juárez · carojuarez.doctor</div>
+  </footer>
+
+</body>
+</html>
