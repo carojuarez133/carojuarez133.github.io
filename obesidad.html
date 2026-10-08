@@ -1,0 +1,339 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <title>Obesidad sin estigma en Mérida | Dra. Carolina Juárez</title>
+  <meta name="description" content="La obesidad es una enfermedad crónica con base neurobiológica y endocrina. Manejo médico especializado en Mérida y videoconsulta en todo México.">
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Outfit:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --purple: #5b3f8a;
+      --purple-mid: #7052a8;
+      --purple-light: #9b7dd4;
+      --text-dark: #1a1228;
+      --text-mid: #3d2f5c;
+      --text-light: #6b5c8a;
+      --bg-off: #faf8fd;
+      --white: #ffffff;
+    }
+
+    html { scroll-behavior: smooth; }
+    body { font-family: 'Outfit', sans-serif; color: var(--text-dark); background: var(--bg-off); overflow-x: hidden; }
+
+    nav {
+      position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+      padding: 1.2rem 3rem;
+      display: flex; justify-content: space-between; align-items: center;
+      backdrop-filter: blur(12px);
+      background: rgba(255,255,255,0.55);
+      border-bottom: 1px solid rgba(91,63,138,0.1);
+    }
+    .nav-logo { font-family: 'Cormorant Garamond', serif; font-size: 1.1rem; color: var(--purple); text-decoration: none; }
+    .nav-cta {
+      background: var(--purple); color: white; padding: 0.5rem 1.2rem;
+      border-radius: 100px; font-size: 0.8rem; font-weight: 500;
+      text-decoration: none; transition: background 0.2s;
+    }
+    .nav-cta:hover { background: var(--purple-mid); }
+
+    .hero {
+      min-height: 85vh; display: flex; align-items: center;
+      padding: 8rem 3rem 5rem; position: relative; overflow: hidden;
+    }
+    .hero-bg {
+      position: absolute; inset: 0;
+      background:
+        radial-gradient(ellipse 65% 60% at 10% 50%, rgba(212,197,240,0.6) 0%, transparent 60%),
+        radial-gradient(ellipse 55% 65% at 85% 20%, rgba(255,200,180,0.4) 0%, transparent 55%),
+        radial-gradient(ellipse 50% 55% at 50% 90%, rgba(184,216,255,0.35) 0%, transparent 50%),
+        #f5f0ff;
+    }
+    .hero-content { position: relative; z-index: 2; max-width: 720px; }
+    .hero-badge {
+      display: inline-block; font-size: 0.72rem; font-weight: 600;
+      letter-spacing: 0.18em; text-transform: uppercase; color: var(--purple);
+      background: rgba(91,63,138,0.08); border: 1px solid rgba(91,63,138,0.2);
+      padding: 0.4rem 1rem; border-radius: 100px; margin-bottom: 2rem;
+    }
+    .hero h1 {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(2.5rem, 5vw, 4.5rem);
+      font-weight: 300; line-height: 1.1; color: var(--text-dark);
+      margin-bottom: 1.5rem;
+    }
+    .hero h1 em { font-style: italic; color: var(--purple); }
+    .hero-sub {
+      font-size: 1.05rem; font-weight: 300; color: var(--text-mid);
+      line-height: 1.7; max-width: 520px; margin-bottom: 2.5rem;
+    }
+    .hero-btns { display: flex; gap: 1rem; flex-wrap: wrap; }
+
+    .btn-primary {
+      display: inline-flex; align-items: center; gap: 0.5rem;
+      background: var(--purple); color: white;
+      padding: 0.9rem 2rem; border-radius: 100px;
+      font-size: 0.9rem; font-weight: 500; letter-spacing: 0.04em;
+      text-decoration: none; transition: all 0.25s;
+      box-shadow: 0 4px 20px rgba(91,63,138,0.3);
+    }
+    .btn-primary:hover { background: var(--purple-mid); transform: translateY(-2px); box-shadow: 0 8px 28px rgba(91,63,138,0.4); }
+
+    .btn-outline {
+      display: inline-flex; align-items: center; gap: 0.5rem;
+      background: transparent; color: var(--purple);
+      padding: 0.9rem 2rem; border-radius: 100px;
+      border: 2px solid var(--purple);
+      font-size: 0.9rem; font-weight: 500; letter-spacing: 0.04em;
+      text-decoration: none; transition: all 0.25s;
+    }
+    .btn-outline:hover { background: rgba(91,63,138,0.06); transform: translateY(-2px); }
+
+    section { padding: 5rem 3rem; }
+    .container { max-width: 1100px; margin: 0 auto; }
+
+    .section-label {
+      font-size: 0.72rem; font-weight: 600; letter-spacing: 0.2em;
+      text-transform: uppercase; color: var(--purple-light);
+      margin-bottom: 1rem; display: block;
+    }
+    .section-title {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(1.8rem, 3vw, 2.8rem);
+      font-weight: 300; color: var(--text-dark);
+      line-height: 1.2; margin-bottom: 1.5rem;
+    }
+    .section-title em { font-style: italic; color: var(--purple); }
+
+    /* POR QUÉ */
+    .porque { background: var(--white); }
+    .porque-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 5rem; align-items: start; }
+    .porque p { font-size: 1rem; font-weight: 300; color: var(--text-mid); line-height: 1.8; margin-bottom: 1.2rem; }
+
+    .factores { display: flex; flex-direction: column; gap: 0.8rem; margin-top: 0.5rem; }
+    .factor-item {
+      display: flex; align-items: flex-start; gap: 1rem;
+      padding: 1.1rem 1.3rem; border-radius: 12px;
+      background: rgba(91,63,138,0.03);
+      border: 1px solid rgba(91,63,138,0.08);
+    }
+    .factor-dot { width: 8px; height: 8px; border-radius: 50%; background: var(--purple-light); flex-shrink: 0; margin-top: 5px; }
+    .factor-content { min-width: 0; }
+    .factor-title { font-size: 0.9rem; font-weight: 500; color: var(--text-dark); margin-bottom: 0.15rem; }
+    .factor-text { font-size: 0.82rem; font-weight: 300; color: var(--text-light); line-height: 1.5; }
+
+    /* MECANISMOS */
+    .mecanismos {
+      background: linear-gradient(160deg, rgba(212,197,240,0.12) 0%, rgba(255,200,180,0.1) 50%, rgba(184,216,255,0.12) 100%);
+    }
+    .mecanismos-intro { max-width: 640px; margin-bottom: 3rem; }
+    .mecanismos-intro p { font-size: 1rem; font-weight: 300; color: var(--text-mid); line-height: 1.8; }
+    .mec-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.2rem; }
+    .mec-card {
+      background: rgba(255,255,255,0.8); backdrop-filter: blur(10px);
+      border: 1px solid rgba(91,63,138,0.1); border-radius: 16px; padding: 1.8rem;
+      position: relative; overflow: hidden;
+    }
+    .mec-card::before {
+      content: ''; position: absolute; top: 0; left: 0; right: 0; height: 3px;
+      background: linear-gradient(90deg, rgba(155,125,212,1), rgba(255,200,180,0.8));
+    }
+    .mec-title { font-size: 0.92rem; font-weight: 500; color: var(--text-dark); margin-bottom: 0.5rem; }
+    .mec-text { font-size: 0.83rem; font-weight: 300; color: var(--text-mid); line-height: 1.6; }
+
+    /* TRATAMIENTO */
+    .tratamiento { background: var(--purple); position: relative; overflow: hidden; }
+    .tratamiento::before {
+      content: ''; position: absolute; inset: 0;
+      background:
+        radial-gradient(ellipse 60% 80% at 20% 50%, rgba(212,197,240,0.15) 0%, transparent 60%),
+        radial-gradient(ellipse 50% 60% at 80% 30%, rgba(255,200,180,0.1) 0%, transparent 55%);
+    }
+    .tratamiento-content { position: relative; z-index: 2; max-width: 720px; }
+    .tratamiento .section-label { color: rgba(255,255,255,0.5); }
+    .tratamiento .section-title { color: white; }
+    .tratamiento p { font-size: 1rem; font-weight: 300; color: rgba(255,255,255,0.8); line-height: 1.8; margin-bottom: 1.2rem; }
+
+    .farmacos-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 1rem; margin-top: 2rem; }
+    .farmaco-item {
+      background: rgba(255,255,255,0.1); border: 1px solid rgba(255,255,255,0.15);
+      border-radius: 12px; padding: 1.2rem 1.4rem;
+    }
+    .farmaco-title { font-size: 0.88rem; font-weight: 500; color: rgba(255,255,255,0.95); margin-bottom: 0.3rem; }
+    .farmaco-text { font-size: 0.8rem; font-weight: 300; color: rgba(255,255,255,0.6); line-height: 1.5; }
+
+    /* CTA */
+    .cta-final { background: var(--white); text-align: center; padding: 6rem 3rem; }
+    .cta-final h2 { font-family: 'Cormorant Garamond', serif; font-size: clamp(2rem, 3.5vw, 3rem); font-weight: 300; color: var(--text-dark); margin-bottom: 1rem; }
+    .cta-final p { font-size: 1rem; font-weight: 300; color: var(--text-mid); margin-bottom: 2.5rem; max-width: 480px; margin-left: auto; margin-right: auto; line-height: 1.7; }
+    .cta-btns { display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap; }
+
+    footer { background: var(--text-dark); padding: 2.5rem 3rem; text-align: center; }
+    .footer-name { font-family: 'Cormorant Garamond', serif; font-size: 1.1rem; font-weight: 300; color: rgba(255,255,255,0.9); margin-bottom: 0.4rem; }
+    .footer-sub { font-size: 0.75rem; color: rgba(255,255,255,0.35); letter-spacing: 0.08em; margin-bottom: 1rem; }
+    .footer-links { display: flex; gap: 1.5rem; justify-content: center; margin-bottom: 1rem; }
+    .footer-links a { font-size: 0.78rem; color: rgba(255,255,255,0.45); text-decoration: none; transition: color 0.2s; }
+    .footer-links a:hover { color: var(--purple-light); }
+    .footer-copy { font-size: 0.7rem; color: rgba(255,255,255,0.2); }
+
+    @media (max-width: 900px) {
+      nav { padding: 1rem 1.5rem; }
+      section { padding: 4rem 1.5rem; }
+      .hero { padding: 7rem 1.5rem 4rem; }
+      .porque-grid { grid-template-columns: 1fr; gap: 2.5rem; }
+      .mec-grid, .farmacos-grid { grid-template-columns: 1fr; }
+      footer { padding: 2rem 1.5rem; }
+    }
+  </style>
+</head>
+<body>
+
+  <nav>
+    <a href="https://carojuarez.doctor" class="nav-logo">Dra. Carolina Juárez</a>
+    <a href="https://dracarolinajuarez.setmore.com" class="nav-cta">Agendar consulta</a>
+  </nav>
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="hero-bg"></div>
+    <div class="hero-content">
+      <span class="hero-badge">Mérida, Yucatán · Videoconsulta en todo México</span>
+      <h1>La obesidad tiene <em>base biológica.</em> El tratamiento también.</h1>
+      <p class="hero-sub">No es falta de voluntad. Es una condición crónica con mecanismos neurobiológicos, hormonales y metabólicos que requieren un abordaje médico real.</p>
+      <div class="hero-btns">
+        <a href="https://dracarolinajuarez.setmore.com" class="btn-primary">Agendar videoconsulta →</a>
+        <a href="https://calendly.com/dracarojuarez/new-meeting" class="btn-outline">Consulta en Mérida</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- POR QUÉ -->
+  <section class="porque">
+    <div class="container">
+      <div class="porque-grid">
+        <div>
+          <span class="section-label">Lo que la evidencia dice</span>
+          <h2 class="section-title">El peso es regulado por el cerebro, <em>las hormonas y la genética.</em></h2>
+          <p>El cuerpo tiene sistemas complejos para regular el peso: el hipotálamo monitorea señales hormonales de saciedad y energía disponible, y ajusta el apetito y el metabolismo en respuesta. En la obesidad, esa señalización se altera.</p>
+          <p>Décadas de investigación muestran que la obesidad involucra resistencia a hormonas como la leptina, alteraciones en el sistema de recompensa cerebral, respuestas al estrés crónico, falta de sueño y factores genéticos que predisponen a acumular más grasa con el mismo aporte calórico.</p>
+          <p>Reducirla a un problema de disciplina ignora todo eso.</p>
+        </div>
+        <div>
+          <span class="section-label" style="margin-bottom:1.2rem;">Factores que influyen</span>
+          <div class="factores">
+            <div class="factor-item">
+              <div class="factor-dot"></div>
+              <div class="factor-content">
+                <div class="factor-title">Señalización hormonal alterada</div>
+                <div class="factor-text">Resistencia a leptina e insulina que interfiere con las señales de saciedad y almacenamiento de energía.</div>
+              </div>
+            </div>
+            <div class="factor-item">
+              <div class="factor-dot"></div>
+              <div class="factor-content">
+                <div class="factor-title">Sistema de recompensa cerebral</div>
+                <div class="factor-text">Cambios en la respuesta a dopamina que generan búsqueda de alimentos de alta densidad energética.</div>
+              </div>
+            </div>
+            <div class="factor-item">
+              <div class="factor-dot"></div>
+              <div class="factor-content">
+                <div class="factor-title">Estrés crónico y cortisol</div>
+                <div class="factor-text">El estrés sostenido eleva el cortisol, que favorece la acumulación de grasa visceral.</div>
+              </div>
+            </div>
+            <div class="factor-item">
+              <div class="factor-dot"></div>
+              <div class="factor-content">
+                <div class="factor-title">Genética y predisposición</div>
+                <div class="factor-text">Variantes genéticas que afectan el metabolismo basal, la distribución de grasa y la respuesta al ejercicio.</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- MECANISMOS -->
+  <section class="mecanismos">
+    <div class="container">
+      <span class="section-label">Por qué es difícil mantener el peso</span>
+      <h2 class="section-title">El cuerpo defiende activamente <em>el peso que tiene.</em></h2>
+      <div class="mecanismos-intro">
+        <p>Cuando se pierde peso, el cuerpo responde reduciendo el gasto metabólico, aumentando el apetito y activando mecanismos de ahorro de energía. No es sabotaje — es la biología haciendo su trabajo. Es por eso que el seguimiento médico continuo marca la diferencia.</p>
+      </div>
+      <div class="mec-grid">
+        <div class="mec-card">
+          <div class="mec-title">Adaptación metabólica</div>
+          <div class="mec-text">El metabolismo basal disminuye con la pérdida de peso, haciendo más difícil mantener el déficit calórico con el tiempo.</div>
+        </div>
+        <div class="mec-card">
+          <div class="mec-title">Señales de hambre amplificadas</div>
+          <div class="mec-text">Los niveles de grelina — la hormona del hambre — aumentan tras la pérdida de peso y pueden mantenerse elevados por meses o años.</div>
+        </div>
+        <div class="mec-card">
+          <div class="mec-title">Punto de ajuste corporal</div>
+          <div class="mec-text">El cerebro tiene un peso de referencia que defiende activamente, ajustando el apetito y el gasto energético para volver a él.</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- TRATAMIENTO -->
+  <section class="tratamiento">
+    <div class="container">
+      <div class="tratamiento-content">
+        <span class="section-label">Tratamiento</span>
+        <h2 class="section-title">Hoy existen herramientas farmacológicas <em>diseñadas para este problema.</em></h2>
+        <p>Los medicamentos para obesidad actúan sobre los mismos mecanismos que la dificultan: regulan las señales de apetito y saciedad, mejoran la sensibilidad a la insulina, apoyan el metabolismo o reducen la absorción de glucosa. Ninguno es para todos, y el que tiene indicación depende del perfil metabólico de cada persona.</p>
+        <p>La valoración define cuál tiene sentido para ti y cómo integrarlo a un plan estructurado.</p>
+        <div class="farmacos-grid">
+          <div class="farmaco-item">
+            <div class="farmaco-title">Reguladores del apetito y saciedad</div>
+            <div class="farmaco-text">Actúan sobre el hipotálamo y el sistema digestivo para reducir el hambre y generar saciedad más temprana.</div>
+          </div>
+          <div class="farmaco-item">
+            <div class="farmaco-title">Mejoradores de sensibilidad a la insulina</div>
+            <div class="farmaco-text">Corrigen la resistencia metabólica de fondo y favorecen la pérdida de peso de manera sostenible.</div>
+          </div>
+          <div class="farmaco-item">
+            <div class="farmaco-title">Moduladores del sistema de recompensa</div>
+            <div class="farmaco-text">Útiles cuando hay alimentación emocional o patrones de atracón vinculados a la regulación del estado de ánimo.</div>
+          </div>
+          <div class="farmaco-item">
+            <div class="farmaco-title">Protectores metabólicos y cardiovasculares</div>
+            <div class="farmaco-text">Reducen comorbilidades asociadas — hígado graso, presión arterial, glucosa — mientras acompañan el proceso de pérdida de peso.</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="cta-final">
+    <div class="container">
+      <h2>El punto de partida es <em>una valoración real.</em></h2>
+      <p>Conocer tu perfil metabólico permite diseñar un plan con sentido clínico — no una dieta genérica, sino una estrategia adaptada a cómo funciona tu cuerpo.</p>
+      <div class="cta-btns">
+        <a href="https://dracarolinajuarez.setmore.com" class="btn-primary">Agendar videoconsulta →</a>
+        <a href="https://calendly.com/dracarojuarez/new-meeting" class="btn-outline">Consulta en Mérida</a>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="footer-name">Dra. Carolina Juárez Zúñiga</div>
+    <div class="footer-sub">Médica Internista · Cédulas 7184901 y 9807953</div>
+    <div class="footer-links">
+      <a href="https://carojuarez.doctor">Inicio</a>
+      <a href="https://carojuarez.doctor/glp1">GLP-1</a>
+      <a href="https://carojuarez.doctor/resistencia-insulina">Resistencia a la insulina</a>
+    </div>
+    <div class="footer-copy">© 2026 Dra. Carolina Juárez · Mérida, Yucatán</div>
+  </footer>
+
+</body>
+</html>
